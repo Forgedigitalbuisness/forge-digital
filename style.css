@@ -1,3 +1,23 @@
 .logo img{
   height:50px;
 }
+.hero-stats{
+display:flex;
+justify-content:center;
+gap:40px;
+margin-top:40px;
+flex-wrap:wrap;
+}
+
+.hero-stats div{
+background:#111a2e;
+padding:20px;
+border-radius:14px;
+min-width:120px;
+}
+
+.hero-stats strong{
+display:block;
+font-size:22px;
+color:#4ade80;
+}

@@ -140,10 +140,23 @@
     </div>
   </section>
 
-  <section id="contact" class="section">
-    <h2>Contact</h2>
-    <p>Email us at: forgesupport@example.com</p>
-  </section>
+ <section id="contact" class="section">
+  <h2>Contact</h2>
+
+  <form action="https://api.web3forms.com/submit" method="POST" style="max-width:500px;margin:auto;display:flex;flex-direction:column;gap:10px;">
+
+    <input type="hidden" name="access_key" value="f2e5b7c9-6f12-4cb6-a329-453ec20bf9f1">
+
+    <input type="text" name="name" placeholder="Your Name" required style="padding:10px;">
+    
+    <input type="email" name="email" placeholder="Your Email" required style="padding:10px;">
+
+    <textarea name="message" placeholder="Tell us about your project" required style="padding:10px;height:120px;"></textarea>
+
+    <button type="submit" class="btn">Send Message</button>
+
+  </form>
+</section>
 
   <footer>
     <p>© 2026 Forge Digital. All rights reserved.</p>

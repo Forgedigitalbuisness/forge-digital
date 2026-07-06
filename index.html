@@ -4,18 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Forge Digital</title>
- 
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
   <style>
+    :root {
+      --bg: #0b1220;
+      --card: #111a2e;
+      --text: #e5e7eb;
+      --accent: #4ade80;
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, sans-serif;
+      font-family: 'Inter', sans-serif;
     }
 
     body {
-      background: #0f172a;
-      color: white;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
     }
 
@@ -23,25 +32,30 @@
       display: flex;
       justify-content: space-between;
       padding: 20px 40px;
-      background: #111827;
+      background: #0f172a;
       position: sticky;
       top: 0;
     }
 
     nav h1 {
-      color: #4ade80;
+      color: var(--accent);
+      font-size: 20px;
     }
 
     nav a {
-      color: white;
+      color: var(--text);
       margin-left: 20px;
       text-decoration: none;
+    }
+
+    nav a:hover {
+      color: var(--accent);
     }
 
     .hero {
       text-align: center;
       padding: 120px 20px;
-      background: linear-gradient(135deg, #1e293b, #0f172a);
+      background: linear-gradient(135deg, #0f172a, #0b1220);
     }
 
     .hero h2 {
@@ -50,46 +64,92 @@
     }
 
     .hero p {
-      font-size: 18px;
-      color: #cbd5e1;
+      color: #94a3b8;
       margin-bottom: 30px;
     }
 
     .btn {
-      background: #4ade80;
+      background: var(--accent);
       color: black;
-      padding: 12px 25px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
+      padding: 12px 24px;
+      border-radius: 10px;
       text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      transition: 0.3s;
     }
 
-    .section {
-      padding: 80px 20px;
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    section {
+      padding: 100px 20px;
       text-align: center;
+    }
+
+    section h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
     }
 
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
-      margin-top: 30px;
-      padding: 0 20px;
+      margin-top: 40px;
     }
 
     .card {
-      background: #1f2937;
-      padding: 20px;
-      border-radius: 12px;
+      background: var(--card);
+      padding: 25px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.05);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: var(--accent);
+    }
+
+    form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    input, textarea {
+      padding: 12px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+    }
+
+    textarea {
+      height: 140px;
+      resize: none;
     }
 
     footer {
       text-align: center;
       padding: 30px;
-      background: #111827;
-      margin-top: 40px;
+      background: #0f172a;
+      color: #94a3b8;
+    }
+
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 32px;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -99,67 +159,65 @@
   <nav>
     <h1>Forge Digital</h1>
     <div>
-      <a href="#services">Services</a>
       <a href="#about">About</a>
+      <a href="#services">Services</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
 
-  <section class="hero">
+  <div class="hero">
     <h2>Modern Websites That Grow Your Business</h2>
-    <p>We build fast, clean, mobile-friendly websites for local businesses.</p>
+    <p>Clean, fast, and professional websites for small businesses.</p>
     <a class="btn" href="#contact">Get a Free Quote</a>
-  </section>
+  </div>
 
-  <section id="about" class="section">
-    <h2>About Forge Digital</h2>
-    <p>
-      We help small businesses get online with modern websites that look professional
-      and bring in more customers.
+  <section id="about">
+    <h2>About</h2>
+    <p style="max-width:600px;margin:auto;color:#94a3b8;">
+      Forge Digital builds modern websites that help small businesses attract more customers and look professional online.
     </p>
   </section>
 
-  <section id="services" class="section">
+  <section id="services">
     <h2>Services</h2>
 
     <div class="cards">
       <div class="card">
         <h3>Business Websites</h3>
-        <p>Clean, modern websites for any business.</p>
+        <p>Modern, clean websites for any business.</p>
       </div>
 
       <div class="card">
         <h3>Landing Pages</h3>
-        <p>High-converting pages to get more leads.</p>
+        <p>High-converting pages to generate leads.</p>
       </div>
 
       <div class="card">
-        <h3>Redesigns</h3>
+        <h3>Website Redesign</h3>
         <p>Upgrade outdated websites into modern designs.</p>
       </div>
     </div>
   </section>
 
- <section id="contact" class="section">
-  <h2>Contact</h2>
+  <section id="contact">
+    <h2>Contact</h2>
 
-  <form action="https://api.web3forms.com/submit" method="POST" style="max-width:500px;margin:auto;display:flex;flex-direction:column;gap:10px;">
+    <form action="https://api.web3forms.com/submit" method="POST">
 
-    <input type="hidden" name="access_key" value="f2e5b7c9-6f12-4cb6-a329-453ec20bf9f1">
+      <!--f2e5b7c9-6f12-4cb6-a329-453ec20bf9f1 -->
+      <input type="hidden" name="access_key" value="f2e5b7c9-6f12-4cb6-a329-453ec20bf9f1">
 
-    <input type="text" name="name" placeholder="Your Name" required style="padding:10px;">
-    
-    <input type="email" name="email" placeholder="Your Email" required style="padding:10px;">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Tell us about your project" required></textarea>
 
-    <textarea name="message" placeholder="Tell us about your project" required style="padding:10px;height:120px;"></textarea>
+      <button class="btn" type="submit">Send Message</button>
 
-    <button type="submit" class="btn">Send Message</button>
-
-  </form>
-</section>
+    </form>
+  </section>
 
   <footer>
-    <p>© 2026 Forge Digital. All rights reserved.</p>
+    © 2026 Forge Digital. All rights reserved.
   </footer>
 
 </body>

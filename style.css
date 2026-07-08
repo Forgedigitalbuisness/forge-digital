@@ -175,8 +175,9 @@ header {
 
 
 .hero-preview {
-
-    width:420px;
+    width: 520px;
+    min-width: 520px;
+}
 
     background:#111827;
 

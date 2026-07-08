@@ -1,56 +1,80 @@
-const menuButton = document.querySelector(".menu-btn");
-const links = document.querySelector(".nav-links");
+// =========================
+// MOBILE HAMBURGER MENU
+// =========================
+
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("navLinks");
+
+hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
 
 
-menuButton.addEventListener("click",()=>{
+// Close mobile menu when a link is clicked
 
-    if(links.style.display==="flex"){
+const menuLinks = document.querySelectorAll(".nav-links a");
 
-        links.style.display="none";
+menuLinks.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        navLinks.classList.remove("active");
+
+    });
+
+});
+
+
+// =========================
+// NAVBAR SCROLL EFFECT
+// =========================
+
+const navbar = document.querySelector(".navbar");
+
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 50) {
+
+        navbar.style.background = "rgba(7, 11, 22, 0.95)";
+
+    } else {
+
+        navbar.style.background = "rgba(7, 11, 22, 0.75)";
 
     }
 
-    else{
-
-        links.style.display="flex";
-        links.style.flexDirection="column";
-
-    }
-
 });
 
 
+// =========================
+// FADE IN ANIMATION SETUP
+// =========================
 
-// simple scroll animation
-
-const sections=document.querySelectorAll("section");
-
-
-window.addEventListener("scroll",()=>{
+const sections = document.querySelectorAll(".section, .hero");
 
 
-sections.forEach(section=>{
+const observer = new IntersectionObserver((entries) => {
 
-const position=section.getBoundingClientRect().top;
+    entries.forEach(entry => {
 
-if(position < window.innerHeight - 100){
+        if (entry.isIntersecting) {
 
-section.style.opacity="1";
-section.style.transform="translateY(0)";
+            entry.target.classList.add("show");
 
-}
+        }
 
+    });
+
+}, {
+    threshold: 0.15
 });
 
 
-});
+sections.forEach(section => {
 
+    section.classList.add("hidden");
 
-
-sections.forEach(section=>{
-
-section.style.opacity="0";
-section.style.transform="translateY(50px)";
-section.style.transition="1s";
+    observer.observe(section);
 
 });

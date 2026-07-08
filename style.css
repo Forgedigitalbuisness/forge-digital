@@ -154,18 +154,179 @@ header {
 
 .hero {
 
-    min-height: 100vh;
+    min-height:100vh;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display:flex;
 
-    background:
-    radial-gradient(circle at top right, rgba(74,222,128,.15), transparent 30%);
+    flex-direction:row;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:60px;
+
+    padding-top:120px;
+
+}
+/* =========================
+   HERO WEBSITE PREVIEW
+========================= */
+
+
+.hero-preview {
+
+    width:420px;
+
+    background:#111827;
+
+    border:1px solid #1e293b;
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    box-shadow:0 30px 80px rgba(0,0,0,.4);
+
+    animation:float 5s ease-in-out infinite;
 
 }
 
 
+
+.browser-bar {
+
+    height:45px;
+
+    background:#0f172a;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding-left:20px;
+
+}
+
+
+
+.browser-bar span {
+
+    width:12px;
+
+    height:12px;
+
+    background:#4ade80;
+
+    border-radius:50%;
+
+}
+
+
+
+.preview-content {
+
+    padding:35px;
+
+}
+
+
+
+.preview-content h3 {
+
+    font-size:1.8rem;
+
+}
+
+
+
+.preview-content p {
+
+    margin-bottom:25px;
+
+}
+
+
+
+.preview-buttons {
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+
+
+.preview-buttons div {
+
+    height:12px;
+
+    width:120px;
+
+    background:#4ade80;
+
+    border-radius:20px;
+
+}
+
+
+
+.preview-buttons div:last-child {
+
+    width:70px;
+
+    background:#334155;
+
+}
+
+
+
+.preview-boxes {
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:15px;
+
+    margin-top:40px;
+
+}
+
+
+
+.preview-boxes div {
+
+    height:80px;
+
+    background:#1e293b;
+
+    border-radius:15px;
+
+}
+
+
+
+
+@keyframes float {
+
+    0%,100% {
+
+        transform:translateY(0);
+
+    }
+
+
+    50% {
+
+        transform:translateY(-15px);
+
+    }
+
+}
 .hero-content {
 
     max-width: 850px;
@@ -561,6 +722,22 @@ footer h3 {
 .hero-stats {
 
     flex-direction:column;
+
+}
+
+
+.hero {
+
+    flex-direction:column;
+
+}
+
+
+.hero-preview {
+
+    width:100%;
+
+    max-width:420px;
 
 }
 
